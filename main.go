@@ -1167,8 +1167,9 @@ func main() {
 	}
 
 	for tag, count := range result.Score.Breakdown() {
-		AdminLogger.Printf("%s: %d", tag, count)
+		ContestantLogger.Printf("%s: %d", tag, count)
 	}
+	ContestantLogger.Printf("Error: %d", len(result.Errors.All()))
 
 	score := SumScore(result)
 	ContestantLogger.Printf("score: %d", score)
